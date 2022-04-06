@@ -2,22 +2,26 @@ import React from "react";
 import { StatusBar, StyleSheet, Text, View, Platform } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
-import { RestaurantInfo } from "../components/restaurant-info.component";
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const isAndroid = Platform.OS === 'android';
 
 export const RestaurantsScreen = () => (
-    <View>
+    <View style={styles.appContainer}>
       <View style={styles.searchContainer}>
         <Searchbar />
       </View>
       <View style={styles.listContainer}>
-        <RestaurantInfo />
+        <RestaurantInfoCard />
       </View>
-      </View>
+    </View>
 )
 
 const styles = StyleSheet.create({
+
+    appContainer: {
+      flex: 1
+    },
 
     searchContainer: {
       backgroundColor: "white",
